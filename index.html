@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UPBRAND — Upgrade Your Brand, Grow Your Business</title>
+    <!-- Google Fonts sesuai Brand Guidelines -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* COLOR PALETTE (Sesuai Brand Guidelines) */
+        :root {
+            --primary-blue: #3155FF;   /* Trust, Professional Digital */
+            --accent-purple: #A7BBFA;  /* Creativity, Innovation */
+            --dark-neutral: #171717;   /* Professional Strength */
+            --clean-white: #FBFCFC;    /* Clean Simplicity */
+            --bg-light: #F4F6FB;
+            --text-muted: #555555;
+            --font-heading: 'Sora', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--clean-white);
+            color: var(--dark-neutral);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 70px; /* Space for Mobile Bottom Bar */
+        }
+
+        @media (min-width: 901px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: var(--font-heading);
+        }
+
+        /* NAVIGATION BAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(251, 252, 252, 0.98);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--dark-neutral);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(49, 85, 255, 0.3);
+        }
+
+        .logo span {
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-neutral);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(49, 85, 255, 0.25);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary:active, .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(49, 85, 255, 0.4);
+            background-color: #2544d9;
+        }
+
+        /* MOBILE MENU TOGGLE */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.4rem;
+            background: none;
+            border: none;
+            color: var(--dark-neutral);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 130px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(49, 85, 255, 0.1);
+            color: var(--primary-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.22;
+            margin-bottom: 18px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-blue);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .hero-btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-img-box {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-blue), #1e3a8a);
+            border-radius: 24px;
+            padding: 32px 28px;
+            color: white;
+            box-shadow: 0 16px 32px rgba(49, 85, 255, 0.18);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 320px;
+        }
+
+        .hero-img-box i {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            color: var(--accent-purple);
+        }
+
+        /* QUICK JUMP NAV BAR (PREVENT EXCESSIVE SCROLLING) */
+        .quick-nav-bar {
+            background: var(--dark-neutral);
+            color: white;
+            padding: 14px 20px;
+            position: sticky;
+            top: 65px;
+            z-index: 900;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .quick-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: auto;
+            gap: 12px;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+
+        .quick-nav-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .quick-nav-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .quick-nav-btn:hover, .quick-nav-btn.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* FITUR CERDAS 1: CALCULATOR SECTION */
+        .smart-section {
+            background: linear-gradient(180deg, var(--clean-white) 0%, var(--bg-light) 100%);
+            padding: 70px 20px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        .calc-wrapper {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(49, 85, 255, 0.12);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .calc-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark-neutral);
+        }
+
+        .input-group input, .input-group select {
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(49, 85, 255, 0.15);
+        }
+
+        .calc-results {
+            background: var(--dark-neutral);
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .metric-card span {
+            font-size: 0.75rem;
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        .metric-card h4 {
+            font-size: 1.3rem;
+            margin-top: 4px;
+            color: white;
+            font-weight: 700;
+            word-break: break-word;
+        }
+
+        .recommendation-tag {
+            background: rgba(49, 85, 255, 0.25);
+            border: 1px solid var(--primary-blue);
+            color: #c7d2fe;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* FITUR CERDAS 2: SMART PROJECT & TIMELINE ESTIMATOR */
+        .estimator-section {
+            padding: 70px 20px;
+            background: white;
+        }
+
+        .estimator-box {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .checkbox-item {
+            background: white;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .checkbox-item input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-blue);
+        }
+
+        .estimator-summary {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        /* FITUR CERDAS 3: BRAND HEALTH CHECKLIST */
+        .health-section {
+            padding: 70px 20px;
+            background: var(--bg-light);
+        }
+
+        .health-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .quiz-option {
+            background: var(--bg-light);
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .quiz-option:hover {
+            background: #eef2ff;
+        }
+
+        /* ABOUT & VISION/MISSION */
+        .about-section {
+            background-color: var(--bg-light);
+            padding: 70px 20px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .about-card {
+            background: white;
+            padding: 28px 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .about-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--primary-blue);
+        }
+
+        .value-core-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .value-core-list li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .value-core-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+        }
+
+        .visimisi-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 24px;
+            background: var(--dark-neutral);
+            color: white;
+            padding: 32px 24px;
+            border-radius: 20px;
+        }
+
+        .visi-box h3, .misi-box h3 {
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .misi-list {
+            padding-left: 18px;
+            font-size: 0.92rem;
+        }
+
+        .misi-list li {
+            margin-bottom: 8px;
+            color: #d1d1d1;
+        }
+
+        /* SERVICES SECTION */
+        .services-section {
+            padding: 70px 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #EAEAEA;
+            padding: 26px 20px;
+            border-radius: 16px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card:active, .service-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(49, 85, 255, 0.08);
+        }
+
+        .service-num {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-purple);
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .service-click-hint {
+            margin-top: 14px;
+            font-size: 0.78rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* TEAM SECTION */
+        .team-section {
+            background-color: var(--bg-light);
+            padding: 70px 20px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .team-card {
+            background: white;
+            padding: 28px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-purple);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 16px;
+            font-weight: bold;
+        }
+
+        .team-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .team-role {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .team-desc {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            text-align: left;
+        }
+
+        .team-desc li {
+            margin-bottom: 6px;
+            list-style: none;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .team-desc li::before {
+            content: "•";
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* CTA / CONTACT */
+        .cta-section {
+            padding: 70px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-neutral) 0%, #222 100%);
+            color: white;
+        }
+
+        .cta-box h2 {
+            font-size: 2rem;
+            margin-bottom: 14px;
+        }
+
+        .cta-box p {
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto 28px;
+            font-size: 0.98rem;
+        }
+
+        /* MODAL POPUP */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 18px;
+            max-width: 520px;
+            width: 100%;
+            padding: 24px 20px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            animation: fadeIn 0.25s ease-out;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: #888;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--bg-light);
+        }
+
+        /* BOTTOM ACTION BAR FOR MOBILE */
+        .mobile-bottom-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 16px;
+            z-index: 1000;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .bottom-action-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: var(--dark-neutral);
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .bottom-action-btn i {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+        }
+
+        /* BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(49, 85, 255, 0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+            z-index: 990;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0d0d0d;
+            color: #888;
+            padding: 32px 20px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.88rem;
+        }
+
+        .footer-logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* 📱 RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .mobile-bottom-bar {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 65px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 65px);
+                background: rgba(251, 252, 252, 0.98);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 20px;
+                gap: 24px;
+                transition: left 0.3s ease-in-out;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 110px;
+                gap: 32px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-btn-group .btn-primary {
+                width: 100%;
+            }
+
+            .calc-wrapper {
+                grid-template-columns: 1fr;
+                padding: 24px 16px;
+            }
+
+            .about-grid, .visimisi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                UPBRAND
+            </a>
+            <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#tentang" onclick="closeNav()">Tentang</a></li>
+                <li><a href="#kalkulator" onclick="closeNav()">Analisis Growth</a></li>
+                <li><a href="#estimator" onclick="closeNav()">Estimasi Proyek</a></li>
+                <li><a href="#health-check" onclick="closeNav()">Audit Brand</a></li>
+                <li><a href="#layanan" onclick="closeNav()">Layanan</a></li>
+                <li><a href="#tim" onclick="closeNav()">Tim Kami</a></li>
+            </ul>
+            <a href="#kontak" class="btn-primary" style="display: inline-block;">Hubungi Kami</a>
+        </div>
+    </header>
+
+    <!-- STICKY QUICK JUMP NAV BAR (SOLUSI ANTI-SCROLL LELEH) -->
+    <nav class="quick-nav-bar">
+        <div class="quick-nav-container">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase;">Lompat Ke:</span>
+            <a href="#kalkulator" class="quick-nav-btn"><i class="fa-solid fa-calculator"></i> Simulation Growth</a>
+            <a href="#estimator" class="quick-nav-btn"><i class="fa-solid fa-sliders"></i> Estimasi Proyek</a>
+            <a href="#health-check" class="quick-nav-btn"><i class="fa-solid fa-stethoscope"></i> Cek Health Score</a>
+            <a href="#layanan" class="quick-nav-btn"><i class="fa-solid fa-list-check"></i> Layanan</a>
+            <a href="#tim" class="quick-nav-btn"><i class="fa-solid fa-users"></i> Tim UPBRAND</a>
+            <a href="#kontak" class="quick-nav-btn" style="background: var(--primary-blue);"><i class="fa-brands fa-whatsapp"></i> Kontak Langsung</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Digital Agency for UMKM</span>
+            <h1>Upgrade Your Brand, <span>Grow Your Business.</span></h1>
+            <p>UPBRAND membantu UMKM membangun brand yang lebih profesional, menarik, dan relevan melalui solusi digital strategis agar mudah dikenal, dipercaya pelanggan, dan berkembang di era digital.</p>
+            <div class="hero-btn-group">
+                <a href="#layanan" class="btn-primary">Jelajahi Layanan</a>
+                <a href="#kalkulator" class="btn-primary" style="background: transparent; color: var(--dark-neutral); border: 1px solid #ccc; box-shadow: none;">Kalkulator Growth</a>
+            </div>
+        </div>
+        <div class="hero-img-box">
+            <i class="fa-solid fa-rocket"></i>
+            <h2 style="font-size: 1.5rem; margin-bottom: 10px;">Solusi Digital Terintegrasi</h2>
+            <p style="opacity: 0.9; font-size: 0.95rem;">Kami menggabungkan kreativitas, teknologi, dan strategi bisnis untuk membantu UMKM bertransformasi dan mendominasi pasar.</p>
+        </div>
+    </section>
+
+    <!-- FITUR CERDAS 1: BRAND GROWTH & ROI CALCULATOR -->
+    <section class="smart-section" id="kalkulator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cek Potensi Pertumbuhan Brand Anda</h2>
+                <p>Simulasi matematis interaktif untuk membantu UMKM menentukan alokasi anggaran pemasaran secara rasional.</p>
+            </div>
+
+            <div class="calc-wrapper">
+                <div class="calc-inputs">
+                    <h3 style="font-size: 1.2rem; color: var(--dark-neutral);">Input Parameter Usaha</h3>
+                    <div class="input-group">
+                        <label for="monthlyBudget">Estimasi Budget Promosi Bulanan (Rp):</label>
+                        <input type="number" id="monthlyBudget" value="1500000" step="500000" min="500000">
+                    </div>
+                    <div class="input-group">
+                        <label for="targetSales">Target Pelanggan Baru / Bulan:</label>
+                        <input type="number" id="targetSales" value="50" min="5">
+                    </div>
+                    <div class="input-group">
+                        <label for="industryType">Kategori Industri UMKM:</label>
+                        <select id="industryType">
+                            <option value="fnb">Kuliner / F&B</option>
+                            <option value="fashion">Fashion & Apparel</option>
+                            <option value="services">Jasa & Profesional</option>
+                            <option value="retail">Retail / Produk Fisik</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary" onclick="calculateROI()" style="margin-top: 6px; width: 100%;">Hitung Simulasi Growth</button>
+                </div>
+
+                <div class="calc-results">
+                    <div>
+                        <h3 style="color: var(--accent-purple); font-size: 1.15rem;">Hasil Proyeksi Digital</h3>
+                        <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 2px;">Berdasarkan rata-rata benchmark industri digital marketing UMKM Indonesia.</p>
+                        
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <span>Estimasi Reach</span>
+                                <h4 id="resReach">30,000+</h4>
+                            </div>
+                            <div class="metric-card">
+                                <span>Leads / WA</span>
+                                <h4 id="resLeads">150 Kontak</h4>
+                            </div>
+                            <div class="metric-card">
+                                <span>Potensi Konversi</span>
+                                <h4 id="resConversion">15 Sales</h4>
+                            </div>
+                            <div class="metric-card">
+                                <span>Indeks ROI</span>
+                                <h4 id="resROI">2.4x ROI</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-tag" id="recommendationText">
+                        <strong>Rekomendasi UPBRAND:</strong> Paket Content & Social Media cocok untuk membangun awareness produk Anda.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FITUR CERDAS 2: SMART PROJECT & TIMELINE ESTIMATOR -->
+    <section class="estimator-section" id="estimator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Smart Project & Timeline Estimator</h2>
+                <p>Pilih kombinasi kebutuhan digital bisnis Anda dan dapatkan kalkulasi estimasi durasi pengerjaan serta alokasi tim UPBRAND yang akan mendampingi.</p>
+            </div>
+
+            <div class="estimator-box">
+                <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Pilih Layanan yang Dibutuhkan:</h3>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="checkbox" value="identity" onchange="updateEstimator()" checked> Brand Identity (Logo & Style)
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" value="strategy" onchange="updateEstimator()"> Brand Strategy & Positioning
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" value="content" onchange="updateEstimator()" checked> Content & Social Media
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" value="ads" onchange="updateEstimator()"> Digital Marketing & Paid Ads
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" value="growth" onchange="updateEstimator()"> Brand Growth & Analytics
+                    </label>
+                </div>
+
+                <div class="estimator-summary">
+                    <h4 style="color: var(--primary-blue); font-size: 1.1rem; margin-bottom: 8px;">Ringkasan Estimasi Proyek:</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 6px;"><strong>⏱ Estimasi Waktu Pengerjaan:</strong> <span id="estDuration">10 - 14 Hari Kerja</span></p>
+                    <p style="font-size: 0.95rem; margin-bottom: 6px;"><strong>👥 Personil Tim Penanggung Jawab:</strong> <span id="estTeam">Najwa (CEO/PM), Aswandy (Creative Lead), Mariana (Marketing/Data)</span></p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">*Estimasi ini dinamis dan dapat disesuaikan kembali berdasarkan kompleksitas brief pada sesi konsultasi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FITUR CERDAS 3: LIVE BRAND HEALTH SCORE CHECKLIST -->
+    <section class="health-section" id="health-check">
+        <div class="container">
+            <div class="section-header">
+                <h2>Live Brand Health & Readiness Score</h2>
+                <p>Jawab 4 pertanyaan singkat berikut untuk mengetahui tingkat kesiapan digital brand UMKM Anda saat ini.</p>
+            </div>
+
+            <div class="health-card">
+                <div id="quizContainer">
+                    <div class="quiz-item" style="margin-bottom: 16px;">
+                        <p style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px;">1. Apakah bisnis Anda sudah memiliki logo vektor dan panduan warna visual yang konsisten?</p>
+                        <div class="quiz-option" onclick="selectScore(1, 25, this)"><input type="radio" name="q1"> Sudah lengkap dan konsisten</div>
+                        <div class="quiz-option" onclick="selectScore(1, 10, this)"><input type="radio" name="q1"> Ada logo, tapi belum ada panduan warna resmi</div>
+                        <div class="quiz-option" onclick="selectScore(1, 0, this)"><input type="radio" name="q1"> Belum ada logo yang tetap</div>
+                    </div>
+                    <div class="quiz-item" style="margin-bottom: 16px;">
+                        <p style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px;">2. Seberapa rutin bisnis Anda mengunggah konten informatif/promosi di sosial media?</p>
+                        <div class="quiz-option" onclick="selectScore(2, 25, this)"><input type="radio" name="q2"> Rutin setiap minggu dengan jadwal terencana</div>
+                        <div class="quiz-option" onclick="selectScore(2, 10, this)"><input type="radio" name="q2"> Kadang-kadang kalau ada waktu luang</div>
+                        <div class="quiz-option" onclick="selectScore(2, 0, this)"><input type="radio" name="q2"> Hampir tidak pernah diisi</div>
+                    </div>
+                    <div class="quiz-item" style="margin-bottom: 16px;">
+                        <p style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px;">3. Apakah Anda sudah memetakan siapa target audiens utama dan keunikan produk (USP)?</p>
+                        <div class="quiz-option" onclick="selectScore(3, 25, this)"><input type="radio" name="q3"> Sudah terdefinisi dengan jelas</div>
+                        <div class="quiz-option" onclick="selectScore(3, 10, this)"><input type="radio" name="q3"> Kira-kira saja, belum tercatat detail</div>
+                        <div class="quiz-option" onclick="selectScore(3, 0, this)"><input type="radio" name="q3"> Belum pernah memikirkan hal itu</div>
+                    </div>
+                    <div class="quiz-item" style="margin-bottom: 16px;">
+                        <p style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px;">4. Apakah Anda pernah mencatat data insight penjualan bulanan dan efektivitas iklan?</p>
+                        <div class="quiz-option" onclick="selectScore(4, 25, this)"><input type="radio" name="q4"> Ya, dicatat dan dievaluasi teratur</div>
+                        <div class="quiz-option" onclick="selectScore(4, 10, this)"><input type="radio" name="q4"> Hanya catat omset total harian</div>
+                        <div class="quiz-option" onclick="selectScore(4, 0, this)"><input type="radio" name="q4"> Belum melakukan pencatatan data</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="btn-primary" onclick="calculateHealthScore()">Lihat Skor Brand Saya</button>
+                </div>
+
+                <div id="healthResult" style="display: none; margin-top: 24px; padding: 20px; background: #eef2ff; border-radius: 14px; text-align: center;">
+                    <h3 style="font-size: 1.3rem; color: var(--primary-blue);">Skor Kesiapan Brand: <span id="scoreVal">0</span>/100</h3>
+                    <p id="scoreAnalysis" style="margin-top: 8px; font-size: 0.95rem; color: var(--text-muted);"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT & CORE VALUES -->
+    <section class="about-section" id="tentang">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mengenal UPBRAND</h2>
+                <p>Wadah kolaboratif yang hadir untuk mendampingi pelaku usaha lokal agar tidak sekadar bertahan, tetapi tumbuh secara konsisten.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Tentang Perusahaan</h3>
+                    <p style="font-size: 0.92rem; color: var(--text-muted);">UPBRAND adalah digital agency yang membantu UMKM meningkatkan kualitas brand dan mengembangkan bisnis melalui branding, website, digital marketing, dan solusi digital yang strategis. Kami memahami bahwa setiap UMKM memiliki cerita unik dan produk berkualitas. Tugas kami adalah menerjemahkan nilai tersebut menjadi strategi pemasaran digital yang berdampak dan menghasilkan nilai ekonomi nyata.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Value Core Kami</h3>
+                    <ul class="value-core-list">
+                        <li>Menyediakan solusi pemasaran digital yang terjangkau, relevan, dan mudah diterapkan.</li>
+                        <li>Menjaga nilai unik, cerita, dan keaslian brand lokal agar tetap menonjol.</li>
+                        <li>Membangun kemitraan yang setara dan transparan dengan mendampingi proses dari awal hingga mandiri.</li>
+                        <li>Menggabungkan tren visual terkini dengan analisis data pasar yang akurat.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- VISI & MISI -->
+            <div class="visimisi-grid" id="visi-misi">
+                <div class="visi-box">
+                    <h3>VISI</h3>
+                    <p style="font-size: 0.92rem; color: #d1d1d1;">Menjadi digital agency terpercaya yang mendorong UMKM Indonesia untuk tumbuh, berdaya saing, dan berkembang di era digital.</p>
+                </div>
+                <div class="misi-box">
+                    <h3>MISI</h3>
+                    <ol class="misi-list">
+                        <li>Membantu UMKM membangun brand yang kuat dan profesional melalui strategi branding yang sesuai dengan karakter bisnis.</li>
+                        <li>Menyediakan solusi digital yang terintegrasi dalam bidang branding, website, dan digital marketing.</li>
+                        <li>Mengembangkan strategi digital yang efektif dan terjangkau sesuai kebutuhan serta kemampuan UMKM.</li>
+                        <li>Meningkatkan jangkauan dan daya saing UMKM melalui pemanfaatan teknologi dan pemasaran digital.</li>
+                        <li>Menjadi partner pertumbuhan jangka panjang bagi UMKM dalam menghadapi perkembangan dunia digital.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section" id="layanan">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan Utama Kami</h2>
+                <p>Solusi komprehensif yang dirancang khusus untuk memperkuat identitas dan jangkauan bisnis Anda. Ketuk kartu untuk melihat detail deliverable.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('Brand Identity', 'Membangun identitas visual lengkap mencakup Logo System, Color Palette, Typography Guidelines, dan Brand Pattern yang memperkuat keunikan bisnis Anda.', '7-14 Hari Kerja', 'File Logo Vektor, Guideline Book PDF, Element Graphic Assets')">
+                    <div class="service-num">01</div>
+                    <h3>Brand Identity</h3>
+                    <p>Membangun identitas visual yang profesional, berkarakter, dan konsisten di seluruh platform digital.</p>
+                    <div class="service-click-hint"><i class="fa-solid fa-circle-info"></i> Ketuk Detail Deliverables</div>
+                </div>
+                <div class="service-card" onclick="openModal('Brand Strategy', 'Analisis mendalam mengenai Positioning, Target Audience Persona, Competitive Analysis, serta Unique Selling Proposition (USP) bisnis Anda.', '5-10 Hari Kerja', 'Dokumen Deck Strategi Brand, Target Persona Matrix')">
+                    <div class="service-num">02</div>
+                    <h3>Brand Strategy</h3>
+                    <p>Menentukan positioning, segmentasi pasar sasaran, dan karakter unik brand Anda untuk memenangkan persaingan.</p>
+                    <div class="service-click-hint"><i class="fa-solid fa-circle-info"></i> Ketuk Detail Deliverables</div>
+                </div>
+                <div class="service-card" onclick="openModal('Content & Social Media', 'Perencanaan, pembuatan desain visual, penulisan copy/caption, serta eksekusi jadwal posting bulanan untuk Instagram & TikTok.', 'Bulanan (Retainer)', 'Content Calendar, Feeds & Reels Design, Copywriting Script')">
+                    <div class="service-num">03</div>
+                    <h3>Content & Social Media</h3>
+                    <p>Mengembangkan konten kreatif yang estetis, menarik, dan relevan sesuai algoritma dan audiens target.</p>
+                    <div class="service-click-hint"><i class="fa-solid fa-circle-info"></i> Ketuk Detail Deliverables</div>
+                </div>
+                <div class="service-card" onclick="openModal('Digital Marketing', 'Penyusunan kampanye iklan berbayar (Meta Ads/TikTok Ads), optimalisasi halaman pendaratan (Landing Page), dan remarketing.', 'Fleksibel / Sesuai Campaign', 'Ads Set Setup, Target Audience Tuning, Monthly Performance Report')">
+                    <div class="service-num">04</div>
+                    <h3>Digital Marketing</h3>
+                    <p>Meningkatkan jangkauan brand secara terukur dan membuka peluang konversi pelanggan baru yang lebih luas.</p>
+                    <div class="service-click-hint"><i class="fa-solid fa-circle-info"></i> Ketuk Detail Deliverables</div>
+                </div>
+                <div class="service-card" onclick="openModal('Brand Growth', 'Evaluasi performa triwulanan/bulanan berbasis data analytics, A/B Testing konten, serta rekomendasi pengembangan lini produk baru.', 'Berkala / Kontinu', 'Data Analytics Dashboard, Strategic Growth Recommendation')">
+                    <div class="service-num">05</div>
+                    <h3>Brand Growth</h3>
+                    <p>Mengevaluasi performa bisnis secara teratur dan mengembangkan strategi pertumbuhan berbasis analisis data real.</p>
+                    <div class="service-click-hint"><i class="fa-solid fa-circle-info"></i> Ketuk Detail Deliverables</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section" id="tim">
+        <div class="container">
+            <div class="section-header">
+                <h2>Struktur Tim UPBRAND</h2>
+                <p>Kolaborasi profesional yang siap mendampingi perjalanan transformasi digital bisnis Anda.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- CEO -->
+                <div class="team-card">
+                    <div class="team-avatar">NJ</div>
+                    <h3>Najwa Jauza Nuwayyar</h3>
+                    <span class="team-role">CEO & Founder</span>
+                    <ul class="team-desc">
+                        <li>Menentukan arah & strategi bisnis UPBRAND</li>
+                        <li>Mengelola hubungan & komunikasi klien</li>
+                        <li>Mengkoordinasikan proyek & pembagian tugas</li>
+                        <li>Mengawasi kualitas hasil pekerjaan</li>
+                    </ul>
+                </div>
+                <!-- Marketing & Data Specialist -->
+                <div class="team-card">
+                    <div class="team-avatar">MS</div>
+                    <h3>Mariana SeliPagiu’</h3>
+                    <span class="team-role">Marketing & Data Specialist</span>
+                    <ul class="team-desc">
+                        <li>Mengelola media sosial & jadwal konten</li>
+                        <li>Membuat caption & strategi promosi digital</li>
+                        <li>Memantau insight & engagement media sosial</li>
+                    </ul>
+                </div>
+                <!-- Creative Lead -->
+                <div class="team-card">
+                    <div class="team-avatar">AS</div>
+                    <h3>Aswandy</h3>
+                    <span class="team-role">Creative Lead</span>
+                    <ul class="team-desc">
+                        <li>Membuat konsep & ide konten visual</li>
+                        <li>Melakukan produksi foto/video & editing</li>
+                        <li>Membuat desain visual kebutuhan brand</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / CONTACT SECTION -->
+    <section class="cta-section" id="kontak">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Siap Mengembangkan Bisnis Anda?</h2>
+                <p>Jadikan brand Anda lebih profesional dan jangkau lebih banyak pelanggan bersama UPBRAND.</p>
+                <a href="https://wa.me/" id="waButton" target="_blank" class="btn-primary" style="font-size: 1rem; padding: 14px 28px; width: 100%; max-width: 300px;">
+                    <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Konsultasi Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL POPUP UNTUK DETAIL LAYANAN -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle" style="color: var(--primary-blue); font-size: 1.4rem; margin-bottom: 10px;">Nama Layanan</h3>
+            <p id="modalDesc" style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 16px;">Deskripsi layanan...</p>
+            <div style="background: var(--bg-light); padding: 14px; border-radius: 10px; margin-bottom: 12px; font-size: 0.88rem;">
+                <strong><i class="fa-solid fa-clock" style="color: var(--primary-blue);"></i> Estimasi Durasi:</strong> <span id="modalDuration">-</span>
+            </div>
+            <div style="background: var(--bg-light); padding: 14px; border-radius: 10px; font-size: 0.88rem;">
+                <strong><i class="fa-solid fa-box-open" style="color: var(--primary-blue);"></i> Output / Deliverables:</strong> <span id="modalDeliverables">-</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- MOBILE BOTTOM ACTION BAR -->
+    <div class="mobile-bottom-bar">
+        <a href="#kalkulator" class="bottom-action-btn">
+            <i class="fa-solid fa-calculator"></i> Growth
+        </a>
+        <a href="#estimator" class="bottom-action-btn">
+            <i class="fa-solid fa-sliders"></i> Estimator
+        </a>
+        <a href="#layanan" class="bottom-action-btn">
+            <i class="fa-solid fa-list-check"></i> Layanan
+        </a>
+        <a href="#kontak" class="bottom-action-btn" style="color: var(--primary-blue);">
+            <i class="fa-brands fa-whatsapp"></i> WA Konsul
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">UPBRAND</div>
+            <p>&copy; 2026 UPBRAND Digital Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FITUR INTERAKTIF & LOGIKA CERDAS -->
+    <script>
+        // Mobile Navigation Drawer
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        function closeNav() {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+        }
+
+        // Back to Top Button Visibility
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Fitur Cerdas 1: Brand Growth & ROI Calculator
+        function calculateROI() {
+            const budget = parseFloat(document.getElementById('monthlyBudget').value) || 0;
+            const targetSales = parseInt(document.getElementById('targetSales').value) || 0;
+            const industry = document.getElementById('industryType').value;
+
+            let cpm = 15000; 
+            let convRate = 0.02;
+
+            if (industry === 'fnb') { cpm = 12000; convRate = 0.025; }
+            else if (industry === 'fashion') { cpm = 18000; convRate = 0.018; }
+            else if (industry === 'services') { cpm = 25000; convRate = 0.03; }
+            else if (industry === 'retail') { cpm = 14000; convRate = 0.02; }
+
+            const estimatedReach = Math.floor((budget / cpm) * 1000);
+            const estimatedLeads = Math.floor(estimatedReach * 0.005);
+            const estimatedSales = Math.floor(estimatedLeads * convRate * 10);
+            const estimatedRoiIndex = ((budget * 1.8) / budget).toFixed(1);
+
+            document.getElementById('resReach').innerText = estimatedReach.toLocaleString('id-ID') + '+';
+            document.getElementById('resLeads').innerText = estimatedLeads.toLocaleString('id-ID') + ' Kontak';
+            document.getElementById('resConversion').innerText = estimatedSales.toLocaleString('id-ID') + ' Sales';
+            document.getElementById('resROI').innerText = estimatedRoiIndex + 'x Index';
+
+            const recBox = document.getElementById('recommendationText');
+            let recommendation = '';
+
+            if (budget < 1000000) {
+                recommendation = '<strong>Rekomendasi UPBRAND:</strong> Budget Anda ideal untuk pembenahan <strong>Brand Identity</strong> dasar dan optimasi organik Feed Instagram.';
+            } else if (budget >= 1000000 && budget <= 3000000) {
+                recommendation = '<strong>Rekomendasi UPBRAND:</strong> Paket <strong>Content & Social Media</strong> sangat pas untuk membangun konsistensi visual dan engagement bulanan.';
+            } else {
+                recommendation = '<strong>Rekomendasi UPBRAND:</strong> Anda siap untuk eksekusi terintegrasi: <strong>Digital Marketing (Paid Ads)</strong> + <strong>Brand Growth Strategy</strong>.';
+            }
+
+            recBox.innerHTML = recommendation;
+
+            const waButton = document.getElementById('waButton');
+            const message = encodeURIComponent(`Halo UPBRAND, saya telah menghitung estimasi growth di website. Budget promosi saya: Rp ${budget.toLocaleString('id-ID')}/bulan. Saya ingin berkonsultasi mengenai paket layanan yang cocok.`);
+            waButton.href = `https://wa.me/?text=${message}`;
+        }
+
+        // Fitur Cerdas 2: Smart Project & Timeline Estimator Logic
+        function updateEstimator() {
+            const checkboxes = document.querySelectorAll('.estimator-box input[type="checkbox"]:checked');
+            let totalDaysMin = 0;
+            let totalDaysMax = 0;
+            let teamMembers = new Set(['Najwa (PM)']);
+
+            checkboxes.forEach(cb => {
+                if (cb.value === 'identity') {
+                    totalDaysMin += 7; totalDaysMax += 14;
+                    teamMembers.add('Aswandy (Creative)');
+                } else if (cb.value === 'strategy') {
+                    totalDaysMin += 5; totalDaysMax += 10;
+                    teamMembers.add('Mariana (Data)');
+                } else if (cb.value === 'content') {
+                    totalDaysMin += 3; totalDaysMax += 7;
+                    teamMembers.add('Aswandy (Creative)');
+                    teamMembers.add('Mariana (Marketing)');
+                } else if (cb.value === 'ads') {
+                    totalDaysMin += 4; totalDaysMax += 7;
+                    teamMembers.add('Mariana (Data/Ads)');
+                } else if (cb.value === 'growth') {
+                    totalDaysMin += 5; totalDaysMax += 10;
+                    teamMembers.add('Mariana (Data)');
+                }
+            });
+
+            if (checkboxes.length === 0) {
+                document.getElementById('estDuration').innerText = '0 Hari (Pilih layanan di atas)';
+                document.getElementById('estTeam').innerText = '-';
+            } else {
+                document.getElementById('estDuration').innerText = `${totalDaysMin} - ${totalDaysMax} Hari Kerja`;
+                document.getElementById('estTeam').innerText = Array.from(teamMembers).join(', ');
+            }
+        }
+
+        // Fitur Cerdas 3: Brand Health Quiz Logic
+        let healthScores = { 1: 0, 2: 0, 3: 0, 4: 0 };
+
+        function selectScore(qNum, score, el) {
+            healthScores[qNum] = score;
+            const parent = el.parentElement;
+            parent.querySelectorAll('.quiz-option').forEach(opt => opt.style.background = 'var(--bg-light)');
+            el.style.background = '#dbeafe';
+            el.querySelector('input').checked = true;
+        }
+
+        function calculateHealthScore() {
+            const totalScore = healthScores[1] + healthScores[2] + healthScores[3] + healthScores[4];
+            const resultBox = document.getElementById('healthResult');
+            const scoreVal = document.getElementById('scoreVal');
+            const scoreAnalysis = document.getElementById('scoreAnalysis');
+
+            resultBox.style.display = 'block';
+            scoreVal.innerText = totalScore;
+
+            if (totalScore >= 75) {
+                scoreAnalysis.innerHTML = '🔥 <strong>Luar Biasa!</strong> Brand Anda sudah memiliki fondasi kuat. Langkah berikutnya adalah eskalasi skala bisnis melalui <em>Digital Marketing Ads</em> dan <em>Brand Growth Analytics</em>.';
+            } else if (totalScore >= 40) {
+                scoreAnalysis.innerHTML = '⚡ <strong>Cukup Baik!</strong> Brand Anda sudah berjalan tetapi masih membutuhkan konsistensi pada <em>Content & Social Media Strategy</em> serta penetapan USP yang lebih tajam.';
+            } else {
+                scoreAnalysis.innerHTML = '🌱 <strong>Perlu Pembenahan Dasar.</strong> UPBRAND menyarankan untuk memulainya dari perancangan <em>Brand Identity</em> dan <em>Brand Strategy</em> yang jelas agar pelanggan percaya.';
+            }
+        }
+
+        // Modal Functionality
+        function openModal(title, desc, duration, deliverables) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalDuration').innerText = duration;
+            document.getElementById('modalDeliverables').innerText = deliverables;
+            document.getElementById('serviceModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        // Initialize on Load
+        window.onload = function() {
+            calculateROI();
+            updateEstimator();
+        };
+    </script>
+</body>
+</html>
