@@ -83,18 +83,12 @@
             color: var(--dark-neutral);
         }
 
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--primary-blue);
-            color: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(49, 85, 255, 0.3);
+        /* PENGATURAN LOGO GAMBAR BARU */
+        .logo-img {
+            height: 50px; 
+            width: auto;
+            object-fit: contain;
+            transform: scale(1.4); 
         }
 
         .logo span {
@@ -139,6 +133,11 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(49, 85, 255, 0.4);
             background-color: #2544d9;
+        }
+
+        /* TOMBOL HUBUNGI KAMI DI NAVBAR UTAMA (DISEMBUNYIKAN DI HP) */
+        .desktop-cta {
+            display: inline-block;
         }
 
         /* MOBILE MENU TOGGLE */
@@ -220,7 +219,7 @@
             color: var(--accent-purple);
         }
 
-        /* QUICK JUMP NAV BAR (PREVENT EXCESSIVE SCROLLING) */
+        /* QUICK JUMP NAV BAR */
         .quick-nav-bar {
             background: var(--dark-neutral);
             color: white;
@@ -392,7 +391,7 @@
             line-height: 1.5;
         }
 
-        /* FITUR CERDAS 2: SMART PROJECT & TIMELINE ESTIMATOR */
+        /* ESTIMATOR SECTION */
         .estimator-section {
             padding: 70px 20px;
             background: white;
@@ -444,7 +443,7 @@
             border-left: 4px solid var(--primary-blue);
         }
 
-        /* FITUR CERDAS 3: BRAND HEALTH CHECKLIST */
+        /* HEALTH CHECK */
         .health-section {
             padding: 70px 20px;
             background: var(--bg-light);
@@ -835,6 +834,11 @@
                 display: flex;
             }
 
+            /* Menyembunyikan tombol Hubungi Kami di navbar atas versi HP agar tidak menumpuk */
+            .desktop-cta {
+                display: none !important;
+            }
+
             .nav-links {
                 position: fixed;
                 top: 65px;
@@ -894,8 +898,9 @@
     <!-- NAVBAR -->
     <header>
         <div class="nav-container">
+            <!-- LOGO GAMBAR DITAMBAHKAN DI SINI -->
             <a href="#" class="logo">
-                <div class="logo-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <img src="logo_upbrand.PNG" alt="UPBRAND Logo" class="logo-img">
                 UPBRAND
             </a>
             <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
@@ -909,11 +914,11 @@
                 <li><a href="#layanan" onclick="closeNav()">Layanan</a></li>
                 <li><a href="#tim" onclick="closeNav()">Tim Kami</a></li>
             </ul>
-            <a href="#kontak" class="btn-primary" style="display: inline-block;">Hubungi Kami</a>
+            <a href="#kontak" class="btn-primary desktop-cta">Hubungi Kami</a>
         </div>
     </header>
 
-    <!-- STICKY QUICK JUMP NAV BAR (SOLUSI ANTI-SCROLL LELEH) -->
+    <!-- STICKY QUICK JUMP NAV BAR -->
     <nav class="quick-nav-bar">
         <div class="quick-nav-container">
             <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase;">Lompat Ke:</span>
