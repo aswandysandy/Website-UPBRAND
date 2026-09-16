@@ -603,7 +603,7 @@
             gap: 6px;
         }
 
-        /* TEAM SECTION */
+        /* TEAM SECTION & AVATAR FOTO (UKURAN DIPERBESAR MENJADI 110PX) */
         .team-section {
             background-color: var(--bg-light);
             padding: 70px 20px;
@@ -624,8 +624,8 @@
         }
 
         .team-avatar {
-            width: 80px;
-            height: 80px;
+            width: 110px;
+            height: 110px;
             background: var(--accent-purple);
             color: var(--primary-blue);
             border-radius: 50%;
@@ -635,6 +635,13 @@
             font-size: 1.8rem;
             margin: 0 auto 16px;
             font-weight: bold;
+            overflow: hidden; /* Mengunci foto agar tetap di dalam lingkaran */
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Menyesuaikan ukuran foto agar pas di lingkaran tanpa gepeng */
         }
 
         .team-card h3 {
@@ -1197,9 +1204,11 @@
             </div>
 
             <div class="team-grid">
-                <!-- CEO -->
+                <!-- CEO / Najwa -->
                 <div class="team-card">
-                    <div class="team-avatar">NJ</div>
+                    <div class="team-avatar">
+                        <img src="foto-najwa.jpg" alt="Najwa Jauza Nuwayyar">
+                    </div>
                     <h3>Najwa Jauza Nuwayyar</h3>
                     <span class="team-role">CEO & Founder</span>
                     <ul class="team-desc">
@@ -1209,9 +1218,11 @@
                         <li>Mengawasi kualitas hasil pekerjaan</li>
                     </ul>
                 </div>
-                <!-- Marketing & Data Specialist -->
+                <!-- Marketing & Data Specialist / Mariana -->
                 <div class="team-card">
-                    <div class="team-avatar">MS</div>
+                    <div class="team-avatar">
+                        <img src="foto-mariana.jpg" alt="Mariana SeliPagiu’">
+                    </div>
                     <h3>Mariana SeliPagiu’</h3>
                     <span class="team-role">Marketing & Data Specialist</span>
                     <ul class="team-desc">
@@ -1220,9 +1231,11 @@
                         <li>Memantau insight & engagement media sosial</li>
                     </ul>
                 </div>
-                <!-- Creative Lead -->
+                <!-- Creative Lead / Aswandy -->
                 <div class="team-card">
-                    <div class="team-avatar">AS</div>
+                    <div class="team-avatar">
+                        <img src="foto-aswandy.jpg" alt="Aswandy">
+                    </div>
                     <h3>Aswandy</h3>
                     <span class="team-role">Creative Lead</span>
                     <ul class="team-desc">
