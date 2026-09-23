@@ -219,52 +219,6 @@
             color: var(--accent-purple);
         }
 
-        /* QUICK JUMP NAV BAR */
-        .quick-nav-bar {
-            background: var(--dark-neutral);
-            color: white;
-            padding: 14px 20px;
-            position: sticky;
-            top: 65px;
-            z-index: 900;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .quick-nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            overflow-x: auto;
-            gap: 12px;
-            white-space: nowrap;
-            scrollbar-width: none;
-        }
-
-        .quick-nav-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .quick-nav-btn {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .quick-nav-btn:hover, .quick-nav-btn.active {
-            background: var(--primary-blue);
-            color: white;
-        }
-
         /* FITUR CERDAS 1: CALCULATOR SECTION */
         .smart-section {
             background: linear-gradient(180deg, var(--clean-white) 0%, var(--bg-light) 100%);
@@ -603,7 +557,7 @@
             gap: 6px;
         }
 
-        /* TEAM SECTION & AVATAR FOTO (UKURAN DIPERBESAR MENJADI 110PX) */
+        /* TEAM SECTION & AVATAR FOTO */
         .team-section {
             background-color: var(--bg-light);
             padding: 70px 20px;
@@ -635,13 +589,13 @@
             font-size: 1.8rem;
             margin: 0 auto 16px;
             font-weight: bold;
-            overflow: hidden; /* Mengunci foto agar tetap di dalam lingkaran */
+            overflow: hidden; 
         }
 
         .team-avatar img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Menyesuaikan ukuran foto agar pas di lingkaran tanpa gepeng */
+            object-fit: cover; 
         }
 
         .team-card h3 {
@@ -722,12 +676,12 @@
             padding: 24px 20px;
             position: relative;
             box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            animation: fadeIn 0.25s ease-out;
+            animation: fadeInModal 0.25s ease-out;
             max-height: 90vh;
             overflow-y: auto;
         }
 
-        @keyframes fadeIn {
+        @keyframes fadeInModal {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
@@ -746,6 +700,60 @@
             justify-content: center;
             border-radius: 50%;
             background: var(--bg-light);
+        }
+
+        /* ----------------------------------------------------
+           TAMBAHAN: FLOATING WHATSAPP BUTTON (DESKTOP & MOBILE)
+           ---------------------------------------------------- */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366; /* Warna Hijau Khas WhatsApp */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            z-index: 995;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+
+        /* BACK TO TOP BUTTON (Digeser sedikit ke atas agar tidak nabrak tombol WA) */
+        .back-to-top {
+            position: fixed;
+            bottom: 105px; /* Sesuaikan jarak dengan tombol WA */
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(49, 85, 255, 0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+            z-index: 990;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         /* BOTTOM ACTION BAR FOR MOBILE */
@@ -780,32 +788,6 @@
             color: var(--primary-blue);
         }
 
-        /* BACK TO TOP BUTTON */
-        .back-to-top {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 44px;
-            height: 44px;
-            background: var(--primary-blue);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(49, 85, 255, 0.3);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s;
-            z-index: 990;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
         /* FOOTER */
         footer {
             background: #0d0d0d;
@@ -831,6 +813,20 @@
             font-size: 1.1rem;
         }
 
+        /* ========================================================
+           TAMBAHAN: ANIMASI FADE-IN SAAT SCROLL (CSS)
+           ======================================================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* 📱 RESPONSIVE DESIGN */
         @media (max-width: 900px) {
             .mobile-toggle {
@@ -841,7 +837,6 @@
                 display: flex;
             }
 
-            /* Menyembunyikan tombol Hubungi Kami di navbar atas versi HP agar tidak menumpuk */
             .desktop-cta {
                 display: none !important;
             }
@@ -897,6 +892,19 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            /* Penyesuaian Floating WA & Back to Top di HP */
+            .floating-wa {
+                bottom: 85px; /* Naik di atas bar bawah */
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+            }
+
+            .back-to-top {
+                bottom: 145px; /* Naik di atas tombol WA */
+                right: 23px;
+            }
         }
     </style>
 </head>
@@ -905,7 +913,6 @@
     <!-- NAVBAR -->
     <header>
         <div class="nav-container">
-            <!-- LOGO GAMBAR DITAMBAHKAN DI SINI -->
             <a href="#" class="logo">
                 <img src="logo_upbrand.PNG" alt="UPBRAND Logo" class="logo-img">
                 UPBRAND
@@ -925,21 +932,8 @@
         </div>
     </header>
 
-    <!-- STICKY QUICK JUMP NAV BAR -->
-    <nav class="quick-nav-bar">
-        <div class="quick-nav-container">
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase;">Lompat Ke:</span>
-            <a href="#kalkulator" class="quick-nav-btn"><i class="fa-solid fa-calculator"></i> Simulation Growth</a>
-            <a href="#estimator" class="quick-nav-btn"><i class="fa-solid fa-sliders"></i> Estimasi Proyek</a>
-            <a href="#health-check" class="quick-nav-btn"><i class="fa-solid fa-stethoscope"></i> Cek Health Score</a>
-            <a href="#layanan" class="quick-nav-btn"><i class="fa-solid fa-list-check"></i> Layanan</a>
-            <a href="#tim" class="quick-nav-btn"><i class="fa-solid fa-users"></i> Tim UPBRAND</a>
-            <a href="#kontak" class="quick-nav-btn" style="background: var(--primary-blue);"><i class="fa-brands fa-whatsapp"></i> Kontak Langsung</a>
-        </div>
-    </nav>
-
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero fade-in">
         <div class="hero-content">
             <span class="hero-tag">Digital Agency for UMKM</span>
             <h1>Upgrade Your Brand, <span>Grow Your Business.</span></h1>
@@ -961,12 +955,12 @@
     <!-- FITUR CERDAS 1: BRAND GROWTH & ROI CALCULATOR -->
     <section class="smart-section" id="kalkulator">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Cek Potensi Pertumbuhan Brand Anda</h2>
                 <p>Simulasi matematis interaktif untuk membantu UMKM menentukan alokasi anggaran pemasaran secara rasional.</p>
             </div>
 
-            <div class="calc-wrapper">
+            <div class="calc-wrapper fade-in">
                 <div class="calc-inputs">
                     <h3 style="font-size: 1.2rem; color: var(--dark-neutral);">Input Parameter Usaha</h3>
                     <div class="input-group">
@@ -1025,12 +1019,12 @@
     <!-- FITUR CERDAS 2: SMART PROJECT & TIMELINE ESTIMATOR -->
     <section class="estimator-section" id="estimator">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Smart Project & Timeline Estimator</h2>
                 <p>Pilih kombinasi kebutuhan digital bisnis Anda dan dapatkan kalkulasi estimasi durasi pengerjaan serta alokasi tim UPBRAND yang akan mendampingi.</p>
             </div>
 
-            <div class="estimator-box">
+            <div class="estimator-box fade-in">
                 <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Pilih Layanan yang Dibutuhkan:</h3>
                 <div class="checkbox-group">
                     <label class="checkbox-item">
@@ -1063,12 +1057,12 @@
     <!-- FITUR CERDAS 3: LIVE BRAND HEALTH SCORE CHECKLIST -->
     <section class="health-section" id="health-check">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Live Brand Health & Readiness Score</h2>
                 <p>Jawab 4 pertanyaan singkat berikut untuk mengetahui tingkat kesiapan digital brand UMKM Anda saat ini.</p>
             </div>
 
-            <div class="health-card">
+            <div class="health-card fade-in">
                 <div id="quizContainer">
                     <div class="quiz-item" style="margin-bottom: 16px;">
                         <p style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px;">1. Apakah bisnis Anda sudah memiliki logo vektor dan panduan warna visual yang konsisten?</p>
@@ -1111,12 +1105,12 @@
     <!-- ABOUT & CORE VALUES -->
     <section class="about-section" id="tentang">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Mengenal UPBRAND</h2>
                 <p>Wadah kolaboratif yang hadir untuk mendampingi pelaku usaha lokal agar tidak sekadar bertahan, tetapi tumbuh secara konsisten.</p>
             </div>
 
-            <div class="about-grid">
+            <div class="about-grid fade-in">
                 <div class="about-card">
                     <h3>Tentang Perusahaan</h3>
                     <p style="font-size: 0.92rem; color: var(--text-muted);">UPBRAND adalah digital agency yang membantu UMKM meningkatkan kualitas brand dan mengembangkan bisnis melalui branding, website, digital marketing, dan solusi digital yang strategis. Kami memahami bahwa setiap UMKM memiliki cerita unik dan produk berkualitas. Tugas kami adalah menerjemahkan nilai tersebut menjadi strategi pemasaran digital yang berdampak dan menghasilkan nilai ekonomi nyata.</p>
@@ -1133,7 +1127,7 @@
             </div>
 
             <!-- VISI & MISI -->
-            <div class="visimisi-grid" id="visi-misi">
+            <div class="visimisi-grid fade-in" id="visi-misi">
                 <div class="visi-box">
                     <h3>VISI</h3>
                     <p style="font-size: 0.92rem; color: #d1d1d1;">Menjadi digital agency terpercaya yang mendorong UMKM Indonesia untuk tumbuh, berdaya saing, dan berkembang di era digital.</p>
@@ -1155,12 +1149,12 @@
     <!-- SERVICES -->
     <section class="services-section" id="layanan">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Layanan Utama Kami</h2>
                 <p>Solusi komprehensif yang dirancang khusus untuk memperkuat identitas dan jangkauan bisnis Anda. Ketuk kartu untuk melihat detail deliverable.</p>
             </div>
 
-            <div class="services-grid">
+            <div class="services-grid fade-in">
                 <div class="service-card" onclick="openModal('Brand Identity', 'Membangun identitas visual lengkap mencakup Logo System, Color Palette, Typography Guidelines, dan Brand Pattern yang memperkuat keunikan bisnis Anda.', '7-14 Hari Kerja', 'File Logo Vektor, Guideline Book PDF, Element Graphic Assets')">
                     <div class="service-num">01</div>
                     <h3>Brand Identity</h3>
@@ -1198,12 +1192,12 @@
     <!-- TEAM SECTION -->
     <section class="team-section" id="tim">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Struktur Tim UPBRAND</h2>
                 <p>Kolaborasi profesional yang siap mendampingi perjalanan transformasi digital bisnis Anda.</p>
             </div>
 
-            <div class="team-grid">
+            <div class="team-grid fade-in">
                 <!-- CEO / Najwa -->
                 <div class="team-card">
                     <div class="team-avatar">
@@ -1251,10 +1245,10 @@
     <!-- CTA / CONTACT SECTION -->
     <section class="cta-section" id="kontak">
         <div class="container">
-            <div class="cta-box">
+            <div class="cta-box fade-in">
                 <h2>Siap Mengembangkan Bisnis Anda?</h2>
                 <p>Jadikan brand Anda lebih profesional dan jangkau lebih banyak pelanggan bersama UPBRAND.</p>
-                <a href="https://wa.me/" id="waButton" target="_blank" class="btn-primary" style="font-size: 1rem; padding: 14px 28px; width: 100%; max-width: 300px;">
+                <a href="#" id="waButton" target="_blank" class="btn-primary" style="font-size: 1rem; padding: 14px 28px; width: 100%; max-width: 300px;">
                     <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Konsultasi Sekarang
                 </a>
             </div>
@@ -1276,6 +1270,11 @@
         </div>
     </div>
 
+    <!-- TOMBOL WHATSAPP MELAYANG (FLOATING) -->
+    <a href="#" id="floatingWaBtn" target="_blank" class="floating-wa" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <!-- BACK TO TOP BUTTON -->
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to Top">
         <i class="fa-solid fa-arrow-up"></i>
@@ -1292,7 +1291,7 @@
         <a href="#layanan" class="bottom-action-btn">
             <i class="fa-solid fa-list-check"></i> Layanan
         </a>
-        <a href="#kontak" class="bottom-action-btn" style="color: var(--primary-blue);">
+        <a href="#" id="mobileWaBtn" target="_blank" class="bottom-action-btn" style="color: var(--primary-blue);">
             <i class="fa-brands fa-whatsapp"></i> WA Konsul
         </a>
     </div>
@@ -1307,6 +1306,13 @@
 
     <!-- JAVASCRIPT FITUR INTERAKTIF & LOGIKA CERDAS -->
     <script>
+        // ---------------------------------------------------------
+        // 1. TAMBAHKAN NOMOR WA AGENSI ANDA DI SINI
+        // Format: Gunakan kode negara "62" tanpa "+" atau "0" di awal
+        // Contoh: "6287894463335"
+        // ---------------------------------------------------------
+        const AGENCY_WA_NUMBER = "6287894463335";
+
         // Mobile Navigation Drawer
         const mobileBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -1376,9 +1382,10 @@
 
             recBox.innerHTML = recommendation;
 
+            // Update Link WA pada Kalkulator & CTA Bawah
             const waButton = document.getElementById('waButton');
             const message = encodeURIComponent(`Halo UPBRAND, saya telah menghitung estimasi growth di website. Budget promosi saya: Rp ${budget.toLocaleString('id-ID')}/bulan. Saya ingin berkonsultasi mengenai paket layanan yang cocok.`);
-            waButton.href = `https://wa.me/?text=${message}`;
+            waButton.href = `https://wa.me/${AGENCY_WA_NUMBER}?text=${message}`;
         }
 
         // Fitur Cerdas 2: Smart Project & Timeline Estimator Logic
@@ -1468,10 +1475,49 @@
             }
         };
 
+        // ========================================================
+        // TAMBAHAN: ANIMASI FADE-IN SAAT SCROLL (JAVASCRIPT)
+        // ========================================================
+        function initFadeAnimation() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // Jika elemen masuk ke dalam layar (viewport)
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Animasi hanya berjalan satu kali
+                    }
+                });
+            }, {
+                threshold: 0.15 // Elemen akan muncul saat 15% bagiannya sudah terlihat di layar
+            });
+
+            fadeElements.forEach(el => {
+                fadeObserver.observe(el);
+            });
+        }
+
         // Initialize on Load
         window.onload = function() {
             calculateROI();
             updateEstimator();
+            initFadeAnimation(); // Memanggil fungsi animasi scroll
+
+            // Set pesan default untuk berbagai link WA
+            const defaultMsg = encodeURIComponent("Halo UPBRAND, saya tertarik dan ingin berkonsultasi mengenai layanan digital agency untuk bisnis saya.");
+            
+            // 1. Link WA menu bar bawah versi mobile
+            const mobileWaBtn = document.getElementById('mobileWaBtn');
+            if (mobileWaBtn) {
+                mobileWaBtn.href = `https://wa.me/${AGENCY_WA_NUMBER}?text=${defaultMsg}`;
+            }
+
+            // 2. Link WA tombol melayang (Floating)
+            const floatingWaBtn = document.getElementById('floatingWaBtn');
+            if (floatingWaBtn) {
+                floatingWaBtn.href = `https://wa.me/${AGENCY_WA_NUMBER}?text=${defaultMsg}`;
+            }
         };
     </script>
 </body>
